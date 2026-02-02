@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Asya Wippie</title>
+
+<style>
+/* RESET */
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
+body{background:#fff;color:#333;line-height:1.6}
+
+/* NAVBAR */
+nav{
+  position:fixed;top:0;left:0;width:100%;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:14px 40px;background:#fff;
+  box-shadow:0 4px 10px rgba(0,0,0,.08);
+  z-index:1000
+}
+nav img{height:56px}
+nav a{
+  margin-left:20px;text-decoration:none;
+  color:#333;font-weight:600;font-size:15px
+}
+
+/* HERO */
+.hero{
+  margin-top:88px;
+  min-height:70vh;
+  background:
+    linear-gradient(rgba(255,255,255,.8),rgba(255,255,255,.8)),
+    url("img/bg-kue.jpg") center/cover no-repeat;
+  display:flex;align-items:center;justify-content:center;
+  padding:20px;text-align:center
+}
+.hero-box{
+  background:#fff;
+  padding:26px 36px;
+  border-radius:20px;
+  box-shadow:0 12px 30px rgba(0,0,0,.15);
+  max-width:420px
+}
+.hero-box img{
+  width:150px;
+  max-width:70%;
+  margin-bottom:12px
+}
+.hero-box h1{
+  font-size:30px;
+  line-height:1.3
+}
+
+/* SECTION */
+section{padding:70px 40px}
+h2{text-align:center;font-size:28px;margin-bottom:36px}
+
+/* PRODUCT GRID */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:26px
+}
+.card{
+  background:#fff;border-radius:18px;
+  box-shadow:0 10px 24px rgba(0,0,0,.12);
+  overflow:hidden;cursor:pointer;
+  transition:.25s
+}
+.card:hover{transform:translateY(-5px)}
+.card img{
+  width:100%;height:180px;
+  object-fit:cover
+}
+.card h3{
+  padding:16px;
+  font-size:17px;
+  text-align:center
+}
+
+/* GALLERY */
+.gallery{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
+  gap:14px
+}
+.gallery img{
+  width:100%;height:140px;
+  object-fit:cover;
+  border-radius:14px;
+  box-shadow:0 6px 16px rgba(0,0,0,.1)
+}
+
+/* ABOUT */
+.about{
+  background:
+    linear-gradient(rgba(255,255,255,.9),rgba(255,255,255,.9)),
+    url("img/bg-about.jpg") center/cover no-repeat;
+  text-align:center
+}
+.about p{
+  max-width:760px;
+  margin:auto;
+  font-size:15px
+}
+
+/* CONTACT */
+.contact{text-align:center}
+.contact a{
+  display:inline-block;
+  margin-top:18px;
+  padding:14px 34px;
+  border-radius:28px;
+  background:#25D366;
+  color:#fff;
+  text-decoration:none;
+  font-weight:bold
+}
+
+/* FOOTER */
+footer{
+  background:#111;color:#fff;
+  text-align:center;padding:22px;
+  font-size:14px
+}
+
+/* MODAL */
+.modal{
+  display:none;position:fixed;inset:0;
+  background:rgba(0,0,0,.6);
+  align-items:center;justify-content:center;
+  z-index:2000;padding:20px
+}
+.modal-content{
+  background:#fff;
+  border-radius:20px;
+  max-width:480px;width:100%;
+  padding:22px
+}
+.modal-content h3{margin:10px 0 14px}
+.modal-content ul{list-style:none}
+.modal-content li{
+  display:flex;justify-content:space-between;
+  margin-bottom:8px;font-size:15px
+}
+.close{text-align:right;cursor:pointer;font-weight:bold}
+
+/* RESPONSIVE HP */
+@media(max-width:768px){
+  nav{padding:12px 20px}
+  nav img{height:46px}
+  section{padding:60px 20px}
+  .hero-box h1{font-size:24px}
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+  <img src="img/logo.jpg" alt="Asya Wippie">
+  <div>
+    <a href="#menu">Menu</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="hero-box">
+    <img src="img/logo.jpg" alt="Asya Wippie">
+    <h1>Asya Wippie<br>Homemade Cake & Dessert</h1>
+  </div>
+</div>
+
+<section id="menu">
+<h2>Menu Produk</h2>
+<div class="grid">
+  <div class="card" onclick="openModal('burn')">
+    <img src="img/mini-burn.jpg" loading="lazy">
+    <h3>Mini Burn Cheese Cake</h3>
+  </div>
+  <div class="card" onclick="openModal('brownie')">
+    <img src="img/brownie.jpg" loading="lazy">
+    <h3>Brownie Choco Chips</h3>
+  </div>
+  <div class="card" onclick="openModal('cheesekuit')">
+    <img src="img/cheesekuit.jpg" loading="lazy">
+    <h3>Cheesekuit Series</h3>
+  </div>
+</div>
+</section>
+
+<section>
+<h2>Produk Lainnya</h2>
+<div class="gallery">
+  <img src="img/mini-burn.jpg" loading="lazy">
+  <img src="img/brownie.jpg" loading="lazy">
+  <img src="img/cheesekuit.jpg" loading="lazy">
+  <img src="img/mini-burn.jpg" loading="lazy">
+</div>
+</section>
+
+<section id="about" class="about">
+<h2>Tentang Asya Wippie</h2>
+<p>
+Asya Wippie adalah UMKM dessert rumahan yang menghadirkan aneka kue dan dessert
+dengan rasa homemade, bahan berkualitas, dan dibuat fresh berdasarkan sistem
+pre-order.
+<br><br>
+📍 Jl. Tj. 2 No.5, Sukatani, Kec. Tapos, Kota Depok, Jawa Barat 16454  
+<br>
+⏰ Pre-Order minimal H-1 / H-2
+</p>
+</section>
+
+<section id="contact" class="contact">
+<h2>Pesan Sekarang</h2>
+<p>Order langsung via WhatsApp</p>
+<a href="https://wa.me/6285771779882" target="_blank">Chat WhatsApp</a>
+</section>
+
+<footer>© 2026 Asya Wippie</footer>
+
+<div class="modal" id="modal">
+  <div class="modal-content">
+    <div class="close" onclick="closeModal()">✕</div>
+    <h3 id="title"></h3>
+    <ul id="list"></ul>
+  </div>
+</div>
+
+<script>
+const data={
+  burn:[["Choco Berry","Rp25.000"],["Strawberry","Rp25.000"],["Lotus Biscoff","Rp25.000"]],
+  brownie:[["4 pcs","Rp25.000"],["8 pcs","Rp50.000"],["12 pcs","Rp75.000"]],
+  cheesekuit:[["Double Cheese","Rp20.000"],["Matcha Cheese","Rp20.000"],["Choco Cheese","Rp20.000"],["Tiramisu Cheese","Rp20.000"]]
+};
+function openModal(k){
+  modal.style.display="flex";
+  title.innerText=k.toUpperCase();
+  list.innerHTML="";
+  data[k].forEach(i=>list.innerHTML+=`<li><span>${i[0]}</span><b>${i[1]}</b></li>`);
+}
+function closeModal(){modal.style.display="none"}
+</script>
+
+</body>
+</html>
